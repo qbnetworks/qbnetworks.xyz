@@ -1,4 +1,4 @@
-# .github
+# QB Networks blog website repository
 
 QB Networks blog website repository
 
