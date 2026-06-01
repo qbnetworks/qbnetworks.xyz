@@ -1,0 +1,17 @@
+# ChangeLog
+
+All notable changes to this project are documented in this file.
+
+## Unreleased
+
+Date: 2026-06-02
+
+### Changed
+- Updated footer left-side copyright text in index.html from "2026 QB Networks." to "Copyright (C) 2026 QB Networks."
+
+### Files
+- index.html
+
+## Commit History
+
+- ce6c525 | 2026-06-02 | Mert Gor | initial with AGPLv3-or-later
