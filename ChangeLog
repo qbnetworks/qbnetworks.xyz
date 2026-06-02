@@ -7,10 +7,27 @@ All notable changes to this project are documented in this file.
 Date: 2026-06-02
 
 ### Changed
-- Updated footer left-side copyright text in index.html from "2026 QB Networks." to "Copyright (C) 2026 QB Networks."
+
+- Reworked the landing page content around the Free Software Free Society message and removed the old stats, live preview, focus areas, CTA buttons, and email list sections.
+- Updated project branding from "QB Networks Web Development Team" to "QB Networks" across the site and documentation.
+- Switched the visible site branding and favicon to img/qbnetworks400x400.svg and removed the old colored background from the SVG artwork.
+- Added ethics.html and coc.html as first-class themed pages sharing the same design system as the home page.
+- Unified the main navigation across pages with Home, Ethics, and Code of Conduct links.
+- Added LibreJS-friendly footer text on all public pages with direct JavaScript source, website source code, AGPLv3-or-later license, and copyright links.
+- Simplified front-end behavior in script.js to keep only shared header, menu, and reveal logic after removing stats and form handling.
+- Updated English and Turkish README files to reflect the current site structure, branding, and licensing details.
 
 ### Files
+
+- ChangeLog
+- README.md
+- README.tr.md
+- coc.html
+- ethics.html
+- img/qbnetworks400x400.svg
 - index.html
+- script.js
+- styles.css
 
 ## Commit History
 

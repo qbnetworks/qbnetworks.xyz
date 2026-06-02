@@ -1,6 +1,6 @@
 /* @licstart  The following is the entire license notice for the JavaScript code in this page.
  *
- *  QB Networks Web Development Team - modern and mobile-friendly promotional website.
+ *  QB Networks - modern and mobile-friendly promotional website.
  *  Copyright (C) 2026 QB Networks
  *
  *  This program is free software: you can redistribute it and/or modify
@@ -24,9 +24,6 @@
   var menuButton = document.getElementById("menuButton");
   var menu = document.getElementById("mainMenu");
   var revealNodes = document.querySelectorAll(".reveal");
-  var statNodes = document.querySelectorAll(".stat-number");
-  var form = document.getElementById("contactForm");
-  var formResult = document.getElementById("formResult");
 
   function onScrollHeader() {
     if (window.scrollY > 12) {
@@ -37,12 +34,18 @@
   }
 
   function toggleMenu() {
+    if (!menuButton || !menu) {
+      return;
+    }
     var expanded = menuButton.getAttribute("aria-expanded") === "true";
     menuButton.setAttribute("aria-expanded", String(!expanded));
     menu.classList.toggle("open", !expanded);
   }
 
   function closeMenuOnOutsideClick(event) {
+    if (!menuButton || !menu) {
+      return;
+    }
     var clickedInside = menu.contains(event.target) || menuButton.contains(event.target);
     if (!clickedInside) {
       menu.classList.remove("open");
@@ -76,73 +79,14 @@
     });
   }
 
-  function animateStat(node) {
-    var target = Number(node.getAttribute("data-target"));
-    var duration = 1000;
-    var startTime = null;
-
-    function step(timestamp) {
-      if (!startTime) {
-        startTime = timestamp;
-      }
-      var progress = Math.min((timestamp - startTime) / duration, 1);
-      var value = Math.round(target * progress);
-      node.textContent = String(value);
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    }
-
-    window.requestAnimationFrame(step);
-  }
-
-  function setupStatsAnimation() {
-    if (!("IntersectionObserver" in window)) {
-      statNodes.forEach(animateStat);
-      return;
-    }
-
-    var done = false;
-    var statsSection = document.getElementById("stats");
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (done || !entry.isIntersecting) {
-            return;
-          }
-          done = true;
-          statNodes.forEach(animateStat);
-          observer.disconnect();
-        });
-      },
-      { threshold: 0.45 }
-    );
-
-    if (statsSection) {
-      observer.observe(statsSection);
-    }
-  }
-
-  function handleFormSubmit(event) {
-    event.preventDefault();
-
-    if (!form.checkValidity()) {
-      formResult.textContent = "Please complete all fields correctly.";
-      return;
-    }
-
-    formResult.textContent = "Message received. We will get back to you shortly.";
-    form.reset();
-  }
-
   window.addEventListener("scroll", onScrollHeader);
-  menuButton.addEventListener("click", toggleMenu);
+  if (menuButton) {
+    menuButton.addEventListener("click", toggleMenu);
+  }
   document.addEventListener("click", closeMenuOnOutsideClick);
-  form.addEventListener("submit", handleFormSubmit);
 
   onScrollHeader();
   setupRevealAnimation();
-  setupStatsAnimation();
 })();
 
 /* @licend  The above is the entire license notice for the JavaScript code in this page. */

@@ -1,12 +1,13 @@
-# QB Networks Web Development Team
+# QB Networks
 
 Bootstrap yerleşim yardımcıları ve saf JavaScript (frontend framework olmadan) ile geliştirilmiş, modern ve mobil öncelikli bir tanıtım web sitesi.
 
 ## Proje Özeti
 
-QB Networks Web Development Team; sarı, mor, gri ve beyaz renk kimliğine odaklanan tek sayfalık bir web sitesidir. Hafif, duyarlı (responsive) ve bakımı kolay olacak şekilde tasarlanmıştır.
+QB Networks; sarı, mor, gri ve beyaz renk kimliğine odaklanan tek sayfalık bir web sitesidir. Hafif, duyarlı (responsive) ve bakımı kolay olacak şekilde tasarlanmıştır.
 
 Bu projede bilinçli olarak frontend framework kullanılmamıştır ve aşağıdaki teknolojiler tercih edilmiştir:
+
 - Yapı için HTML5
 - Özel stil ve görsel efektler için CSS3
 - Duyarlı grid/yardımcı sınıflar için Bootstrap 5 (CDN)
@@ -18,8 +19,6 @@ Bu projede bilinçli olarak frontend framework kullanılmamıştır ve aşağıd
 - Kaydırmaya göre görsel durumu değişen yapışkan üst menü
 - Küçük ekranlar için mobil menü aç/kapa davranışı
 - IntersectionObserver ile bölüm görünme animasyonları
-- Animasyonlu istatistik sayaçları
-- İstemci tarafı iletişim formu doğrulama ve geri bildirim
 - LibreJS uyumlu JavaScript lisans bildirimi düzeni
 - Kaynak dosyalara AGPLv3-or-later lisans bildirimi eklenmiş olması
 
@@ -34,12 +33,13 @@ Bu projede bilinçli olarak frontend framework kullanılmamıştır ve aşağıd
 
 - index.html: Ana sayfa işaretleme yapısı, bölümler ve LibreJS için lisans tablosu
 - styles.css: Renk sistemi, düzen iyileştirmeleri, responsive kurallar ve bileşen stilleri
-- script.js: Menü davranışı, scroll/görünme efektleri, sayaç animasyonu ve form mantığı
+- script.js: Menü davranışı, scroll/görünme efektleri ve form mantığı
 - LICENSE: GNU Affero General Public License v3 tam metni
 
 ## Renk ve Tasarım Yönü
 
 Arayüz şu renk yaklaşımı üzerine kuruludur:
+
 - Vurgu ve çağrı butonları için sarı
 - Marka derinliği ve hiyerarşi için mor
 - Metin dengesi ve nötr destek için gri
@@ -67,18 +67,17 @@ python -m http.server 5500
 
 Ardından açın:
 
-- http://localhost:5500
-- http://127.0.0.1:5500
+- [http://localhost:5500](http://localhost:5500)
+- [http://127.0.0.1:5500](http://127.0.0.1:5500)
 
 ## Üretim (Production) Notları
 
 - Bootstrap şu an CDN üzerinden yüklenmektedir. Daha sıkı dağıtım kontrolü için bağımlılıkları sabitleyip yerelden sunabilirsiniz.
-- Proje statiktir; görüntülenmesi için backend gerekmez.
-- İletişim formu şu an yalnızca istemci tarafı geri bildirim üretir (sunucuya gönderim yoktur).
+- Sayfa artık temaya uygun bir PSD Hackathon e-posta listesi bölümü ve `hackathon@procyberian.xyz` adresini gösterir.
 
 ## License
 
-QB Networks Web Development Team - modern and mobile-friendly promotional website.
+QB Networks - modern and mobile-friendly promotional website.
 Copyright (C) 2026 QB Networks
 
 This program is free software: you can redistribute it and/or modify
