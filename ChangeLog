@@ -63,6 +63,17 @@ Date: 2026-06-02
 - coc.html
 - styles.css
 
+### Changed (2026-06-03 mobile alignment)
+
+- Fixed small-screen header alignment so the QB Networks brand block (logo + Home link target) stays centered.
+- Moved the navigation directly under the centered brand block on mobile by showing the menu list inline in the header stack.
+- Removed the mobile Menu toggle button for this layout so users always see Home, Ethics, and Code of Conduct links below the brand.
+
+### Files (2026-06-03 mobile alignment)
+
+- ChangeLog
+- styles.css
+
 ## Commit History
 
 - ce6c525 | 2026-06-02 | Mert Gor | initial with AGPLv3-or-later

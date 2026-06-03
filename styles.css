@@ -355,14 +355,21 @@ body {
 }
 
 @media (max-width: 991.98px) {
-  .menu-btn {
-    display: inline-flex;
+  .header-stack {
+    width: 100%;
     align-items: center;
-    justify-content: center;
+  }
+
+  .brand {
+    margin: 0 auto;
+  }
+
+  .menu-btn {
+    display: none;
   }
 
   .menu-list {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
@@ -372,10 +379,6 @@ body {
     border-radius: 12px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
     padding: 0.7rem;
-  }
-
-  .menu-list.open {
-    display: flex;
   }
 
   .menu-list {
