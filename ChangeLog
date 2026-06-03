@@ -74,6 +74,20 @@ Date: 2026-06-02
 - ChangeLog
 - styles.css
 
+### Changed (2026-06-03 menu/style + release script)
+
+- Updated header navigation styling so Home, Ethics, and Code of Conduct links sit directly below the centered QB Networks brand in a horizontal row on small screens.
+- Matched desktop brand presentation to the same centered stacked look used on mobile for consistent top navigation layout.
+- Kept the existing QB Networks logo artwork while removing temporary white-background styling in the SVG so the original logo remains unchanged and transparent.
+- Added a reusable release automation script to create GitHub and Codeberg releases with interactive token prompts and API error handling.
+
+### Files (2026-06-03 menu/style + release script)
+
+- ChangeLog
+- img/qbnetworks400x400.svg
+- scripts/publish-release.sh
+- styles.css
+
 ## Commit History
 
 - ce6c525 | 2026-06-02 | Mert Gor | initial with AGPLv3-or-later

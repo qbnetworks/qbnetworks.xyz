@@ -6,7 +6,6 @@
    sodipodi:docname="qbnetworks400x400.svg"
    viewBox="0 0 400 400"
    version="1.1"
-   style="background:transparent"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    width="400"
    height="400"
@@ -789,7 +788,7 @@
        transform="matrix(6.9576054,0,0,6.8077888,22.004554,-5789.5605)">
       <ellipse
          id="path4112"
-         style="display:none;fill:url(#radialGradient6916)"
+         style="fill:url(#radialGradient6916)"
          transform="matrix(1,0,0,1.2432,0.7251,992.73)"
          cx="24.849752"
          cy="38.908627"
@@ -797,7 +796,7 @@
          ry="7.4751287" />
       <path
          id="path3214"
-         style="display:none;fill:url(#radialGradient6999);stroke:#39396c"
+         style="fill:url(#radialGradient6999);stroke:#39396c"
          d="m 44.685,1026.5 c 0,10.71 -8.6821,19.392 -19.39,19.392 -10.709,0 -19.391,-8.6821 -19.391,-19.392 0,-10.709 8.6816,-19.39 19.391,-19.39 10.708,0 19.39,8.6811 19.39,19.39 z" />
       <g
          id="g4136"
@@ -946,7 +945,7 @@
       </g>
       <circle
          id="path4947"
-         style="display:none;color:#000000;fill:url(#radialGradient1141);fill-rule:evenodd"
+         style="color:#000000;fill:url(#radialGradient1141);fill-rule:evenodd"
          transform="matrix(-0.80628,0.59154,0.59154,0.80628,45.243,1008.8)"
          inkscape:r_cy="true"
          inkscape:r_cx="true"
@@ -955,7 +954,7 @@
          r="6.7175145" />
       <path
          id="path4122"
-         style="display:none;opacity:0.3956;fill:none;stroke:url(#radialGradient6955)"
+         style="opacity:0.3956;fill:none;stroke:url(#radialGradient6955)"
          d="m 43.7,1026.5 c 0,10.166 -8.2412,18.407 -18.406,18.407 -10.1648,0 -18.406,-8.2411 -18.406,-18.407 0,-10.165 8.2407,-18.406 18.406,-18.406 10.164,0 18.406,8.2403 18.406,18.406 z" />
       <circle
          id="path4935"
