@@ -17,6 +17,17 @@ Date: 2026-06-02
 - Simplified front-end behavior in script.js to keep only shared header, menu, and reveal logic after removing stats and form handling.
 - Updated English and Turkish README files to reflect the current site structure, branding, and licensing details.
 
+### Changed (2026-06-03)
+
+- Reworked the header layout on all public pages to a centered, stacked structure: brand (logo + QB Networks) at the top and navigation links centered directly underneath.
+- Removed the temporary logo-only and extra centered-logo block variants after iterative UI adjustments, keeping a consistent brand block in the header.
+- Standardized brand behavior so the top QB Networks brand link on the home page now points to index.html instead of index.html#top.
+- Center-aligned the home hero content so the "Free Software Free Society" heading and its supporting paragraph are visually centered.
+- Reduced the hero title size for better balance with the centered layout.
+- Switched site typography to a monospace stack across pages.
+- Added a shared bottom "Source Code" + "Additional Links" section to index.html and coc.html to match ethics.html.
+- Removed duplicate Source Code card content from coc.html so all pages use the same bottom links pattern.
+
 ### Files
 
 - ChangeLog
@@ -27,6 +38,14 @@ Date: 2026-06-02
 - img/qbnetworks400x400.svg
 - index.html
 - script.js
+- styles.css
+
+### Files (2026-06-03)
+
+- ChangeLog
+- index.html
+- ethics.html
+- coc.html
 - styles.css
 
 ## Commit History

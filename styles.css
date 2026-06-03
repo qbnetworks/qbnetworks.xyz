@@ -43,7 +43,7 @@ body {
               radial-gradient(circle at 85% 8%, #eee5ff 0%, transparent 35%),
               var(--bg);
   color: var(--gray-900);
-  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   scroll-behavior: smooth;
 }
 
@@ -101,11 +101,22 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+.header-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .brand {
   text-decoration: none;
   color: inherit;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   font-weight: 700;
 }
@@ -131,11 +142,14 @@ body {
 
 .menu-list {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1.2rem;
+  width: fit-content;
 }
 
 .menu-list a {
@@ -170,15 +184,19 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   line-height: 1.08;
   margin: 0.5rem 0 1rem;
+  text-align: center;
 }
 
 .hero-subtitle {
   max-width: 58ch;
   color: var(--gray-500);
   font-size: 1.03rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .glass-card {
@@ -337,39 +355,12 @@ body {
 }
 
 @media (max-width: 991.98px) {
-  .menu-btn {
-    display: inline-flex;
-  }
-
   .menu-list {
-    position: absolute;
-    top: 72px;
-    right: 1rem;
-    width: min(220px, calc(100vw - 2rem));
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.4rem;
-    background: var(--white);
-    border: 1px solid var(--gray-100);
-    border-radius: 12px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-    padding: 0.7rem;
-    display: none;
-  }
-
-  .menu-list.open {
-    display: flex;
+    gap: 0.9rem;
   }
 
   .menu-list a {
-    display: block;
-    padding: 0.55rem 0.6rem;
-    border-radius: 8px;
-  }
-
-  .menu-list a:hover,
-  .menu-list a:focus-visible {
-    background: #f6f0ff;
+    padding: 0.25rem 0.35rem;
   }
 
 }
