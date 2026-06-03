@@ -48,6 +48,21 @@ Date: 2026-06-02
 - coc.html
 - styles.css
 
+### Changed (2026-06-03 menu/release)
+
+- Restored mobile navigation behavior by reintroducing the Menu toggle button on all public pages.
+- Re-enabled small-screen dropdown menu styling and open/close behavior so Home, Ethics, and Code of Conduct links are accessible on mobile.
+- Verified release publication for tag v20260603 on both GitHub and Codeberg.
+- Prepared release automation guidance for Codeberg and validated release endpoint behavior for the project repository.
+
+### Files (2026-06-03 menu/release)
+
+- ChangeLog
+- index.html
+- ethics.html
+- coc.html
+- styles.css
+
 ## Commit History
 
 - ce6c525 | 2026-06-02 | Mert Gor | initial with AGPLv3-or-later
