@@ -102,6 +102,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Son Güncellemeler (2026-07-19)
 
+- index.html, ethics.html ve coc.html üzerindeki lisans bölümlerine orijinal dilde lisans bağlantıları eklendi.
+- QB Networks logosu kaynağını tüm genel sayfalarda tutarlı biçimde belirtmek için Public Domain lisans bağlantısı eklendi.
 - Ethics sayfasında çift yönlü referans yapısı eklendi: alıntı işaretleri `[1]..[10]` ilgili referansa gider, referans bağlantıları da ilgili ilke kartına geri döner.
 - Ethics referans metinleri, profil README yapısı ve "Back to reference N" tarzına uyumlu olacak şekilde güncellendi.
 - Bağlantı dönüş hedefleri yalnızca alıntı satırına değil, tam ilke kartına yönlendirildi (başlık + paragraf + alıntı).

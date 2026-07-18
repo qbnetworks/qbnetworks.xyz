@@ -6,6 +6,20 @@ All notable changes to this project are documented in this file.
 
 Date: 2026-06-02
 
+### Changed (2026-07-19 licensing links)
+
+- Added original-language license links to the licensing sections on index.html, ethics.html, and coc.html for the GNU Free Documentation License, GNU Affero General Public License, and CC BY-SA.
+- Added a Public Domain link entry in the licensing sections so the QB Networks logo source is clearly labeled across all public pages.
+
+### Files (2026-07-19 licensing links)
+
+- ChangeLog
+- README.md
+- README.tr.md
+- index.html
+- ethics.html
+- coc.html
+
 ### Changed (2026-07-19 references, navigation, licensing)
 
 - Added bidirectional reference navigation in ethics.html so each principle quote marker `[1]..[10]` opens the matching reference entry and each reference includes a return link.

@@ -86,6 +86,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Recent Updates (2026-07-19)
 
+- Added original-language license links in the licensing sections on index.html, ethics.html, and coc.html.
+- Added a Public Domain license link entry so the QB Networks logo source is labeled consistently on all public pages.
 - Added two-way references on the ethics page: quote markers `[1]..[10]` jump to references, and references return to the matching principle card.
 - Updated ethics reference wording to align with the profile README structure and "Back to reference N" style.
 - Improved anchor navigation readability by targeting full principle cards (not only quote lines).
