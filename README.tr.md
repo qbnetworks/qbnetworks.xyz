@@ -109,3 +109,11 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 - İlkelere dönüşte daha fazla içerik görünmesi için üst gezinme çubuğunun boyutu küçültüldü.
 - Lisans notları güncellenerek QB Networks logosunun Public Domain olduğu ve kaynağının Openclipart olduğu açıkça belirtildi:
 	https://openclipart.org/detail/62191/semantic-social-network
+
+## Son Güncellemeler (2026-07-19 script düzeltmesi)
+
+- scripts/publish-release.sh, etiket parametresi verilmediğinde en güncel git etiketini otomatik kullanacak şekilde güncellendi.
+- `--tag` seçeneğine ek olarak konumsal etiket desteği eklendi (`./scripts/publish-release.sh v20260719`).
+- Doğrudan token verme seçenekleri eklendi: `--github-token` ve `--codeberg-token`.
+- Token çözümleme akışı; CLI seçenekleri, ortam değişkenleri, git config değerleri ve gizli terminal istemi (fallback) olacak şekilde genişletildi.
+- Yardım/usage çıktısı, parametresiz kullanım ve token arama sırası net olacak şekilde iyileştirildi.

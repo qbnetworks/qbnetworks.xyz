@@ -4,20 +4,31 @@ set -euo pipefail
 # Publish the same release to GitHub and Codeberg.
 # Usage examples:
 #   ./scripts/publish-release.sh --tag v20260603-menu-fix-mobile
+#   ./scripts/publish-release.sh v20260719
 #   ./scripts/publish-release.sh --tag v1.2.3 --name "v1.2.3" --notes-file ChangeLog
 
 usage() {
   cat <<'EOF'
 Usage:
+  publish-release.sh
   publish-release.sh --tag <tag> [--name <release_name>] [--notes <text> | --notes-file <file>] [--target <branch_or_sha>]
+  publish-release.sh <tag> [--name <release_name>] [--notes <text> | --notes-file <file>] [--target <branch_or_sha>]
 
 Options:
-  --tag         Release tag (required), e.g. v20260603-menu-fix-mobile
+  --tag         Release tag (optional). If omitted, latest tag is used.
   --name        Release title (default: same as --tag)
   --notes       Release notes text
   --notes-file  Path to a file used as release notes
   --target      Target commitish/branch (default: master)
+  --github-token   GitHub API token (optional, overrides env/config)
+  --codeberg-token Codeberg API token (optional, overrides env/config)
   -h, --help    Show this help
+
+Token lookup order:
+  1) --github-token / --codeberg-token
+  2) GITHUB_TOKEN / CODEBERG_TOKEN environment variables
+  3) git config github.token / codeberg.token
+  4) Hidden terminal prompt fallback
 
 Environment overrides (optional):
   GITHUB_OWNER, GITHUB_REPO
@@ -62,6 +73,15 @@ parse_owner_repo_from_remote() {
   return 1
 }
 
+require_non_empty() {
+  local value="$1"
+  local message="$2"
+  if [[ -z "$value" ]]; then
+    echo "$message" >&2
+    exit 1
+  fi
+}
+
 prompt_secret_if_empty() {
   local var_name="$1"
   local prompt_text="$2"
@@ -69,10 +89,6 @@ prompt_secret_if_empty() {
   if [[ -z "${!var_name:-}" ]]; then
     read -rsp "$prompt_text" secret_value
     echo
-    if [[ -z "$secret_value" ]]; then
-      echo "Error: token cannot be empty." >&2
-      exit 1
-    fi
     printf -v "$var_name" '%s' "$secret_value"
   fi
 }
@@ -82,6 +98,14 @@ NAME=""
 NOTES=""
 NOTES_FILE=""
 TARGET="master"
+GITHUB_TOKEN_ARG=""
+CODEBERG_TOKEN_ARG=""
+
+# Allow positional tag: ./publish-release.sh v20260719
+if [[ $# -gt 0 && "${1:-}" != -* ]]; then
+  TAG="$1"
+  shift
+fi
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -105,6 +129,14 @@ while [[ $# -gt 0 ]]; do
       TARGET="${2:-}"
       shift 2
       ;;
+    --github-token)
+      GITHUB_TOKEN_ARG="${2:-}"
+      shift 2
+      ;;
+    --codeberg-token)
+      CODEBERG_TOKEN_ARG="${2:-}"
+      shift 2
+      ;;
     -h|--help)
       usage
       exit 0
@@ -118,9 +150,12 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$TAG" ]]; then
-  echo "Error: --tag is required." >&2
-  usage
-  exit 1
+  TAG="$(git tag --sort=-creatordate | head -n1)"
+  if [[ -z "$TAG" ]]; then
+    echo "Error: no git tag found. Provide --tag <tag> or create a tag first." >&2
+    exit 1
+  fi
+  echo "No tag provided; using latest tag: $TAG"
 fi
 
 if [[ -z "$NAME" ]]; then
@@ -172,8 +207,14 @@ if [[ -z "${CODEBERG_OWNER:-}" || -z "${CODEBERG_REPO:-}" ]]; then
   CODEBERG_REPO="${CODEBERG_REPO:-$guessed_cb_repo}"
 fi
 
-prompt_secret_if_empty GITHUB_TOKEN "GitHub token girin: "
-prompt_secret_if_empty CODEBERG_TOKEN "Codeberg token girin: "
+GITHUB_TOKEN="${GITHUB_TOKEN_ARG:-${GITHUB_TOKEN:-$(git config --get github.token || true)}}"
+CODEBERG_TOKEN="${CODEBERG_TOKEN_ARG:-${CODEBERG_TOKEN:-$(git config --get codeberg.token || true)}}"
+
+prompt_secret_if_empty GITHUB_TOKEN "Enter GitHub token (hidden): "
+prompt_secret_if_empty CODEBERG_TOKEN "Enter Codeberg token (hidden): "
+
+require_non_empty "$GITHUB_TOKEN" "Error: GitHub token not found. Set --github-token, GITHUB_TOKEN, or git config github.token"
+require_non_empty "$CODEBERG_TOKEN" "Error: Codeberg token not found. Set --codeberg-token, CODEBERG_TOKEN, or git config codeberg.token"
 
 gh_payload="$(jq -n \
   --arg tag "$TAG" \

@@ -93,3 +93,11 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 - Reduced top navigation/header footprint to keep more principle content visible after in-page jumps.
 - Updated licensing notes to explicitly state that the QB Networks logo is Public Domain, sourced from Openclipart:
 	https://openclipart.org/detail/62191/semantic-social-network
+
+## Recent Updates (2026-07-19 script fix)
+
+- Updated scripts/publish-release.sh to use the latest tag automatically when no tag argument is provided.
+- Added positional tag support (`./scripts/publish-release.sh v20260719`) alongside `--tag`.
+- Added direct token flags: `--github-token` and `--codeberg-token`.
+- Token resolution now supports CLI flags, environment variables, git config values, and hidden prompt fallback.
+- Improved help output to document no-argument usage and token lookup behavior clearly.

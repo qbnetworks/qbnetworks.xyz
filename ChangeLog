@@ -26,6 +26,21 @@ Date: 2026-06-02
 - coc.html
 - styles.css
 
+### Changed (2026-07-19 release script token/tag flow)
+
+- Updated scripts/publish-release.sh so it can run without explicit `--tag` by selecting the latest git tag automatically.
+- Added positional tag support (`./publish-release.sh v20260719`) in addition to the `--tag` option.
+- Added direct token options `--github-token` and `--codeberg-token` for non-interactive automation.
+- Kept environment and git-config token sources and introduced hidden terminal prompt fallback (`read -s`) when tokens are not provided.
+- Improved usage/help text to document token lookup order and no-argument behavior.
+
+### Files (2026-07-19 release script token/tag flow)
+
+- ChangeLog
+- README.md
+- README.tr.md
+- scripts/publish-release.sh
+
 ### Changed
 
 - Reworked the landing page content around the Free Software Free Society message and removed the old stats, live preview, focus areas, CTA buttons, and email list sections.
