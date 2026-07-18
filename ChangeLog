@@ -6,6 +6,26 @@ All notable changes to this project are documented in this file.
 
 Date: 2026-06-02
 
+### Changed (2026-07-19 references, navigation, licensing)
+
+- Added bidirectional reference navigation in ethics.html so each principle quote marker `[1]..[10]` opens the matching reference entry and each reference includes a return link.
+- Updated reference wording in ethics.html to match the profile README style and wording, including "Back to reference N" phrasing.
+- Retargeted return links to full principle cards so users land on the entire principle block (title, paragraph, and quote), improving readability.
+- Added principle-card anchor IDs and reference IDs for stable in-page linking.
+- Improved in-page anchor visibility by adding `scroll-margin-top` and `:target` highlighting for principle cards and references.
+- Reduced header height and navigation footprint (logo size, spacing, and link sizing) so more principle content is visible after anchor jumps.
+- Updated artwork licensing notes to specify that the QB Networks logo is Public Domain with source link: https://openclipart.org/detail/62191/semantic-social-network.
+- Applied the logo Public Domain licensing note consistently in ethics.html and coc.html.
+
+### Files (2026-07-19 references, navigation, licensing)
+
+- ChangeLog
+- README.md
+- README.tr.md
+- ethics.html
+- coc.html
+- styles.css
+
 ### Changed
 
 - Reworked the landing page content around the Free Software Free Society message and removed the old stats, live preview, focus areas, CTA buttons, and email list sections.

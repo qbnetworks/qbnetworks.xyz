@@ -83,3 +83,13 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 - Keep LICENSE file unchanged unless legally reviewed
 - Re-test responsive behavior after UI updates
 - Re-check JS behavior if section IDs or class names change
+
+## Recent Updates (2026-07-19)
+
+- Added two-way references on the ethics page: quote markers `[1]..[10]` jump to references, and references return to the matching principle card.
+- Updated ethics reference wording to align with the profile README structure and "Back to reference N" style.
+- Improved anchor navigation readability by targeting full principle cards (not only quote lines).
+- Added anchor UX refinements in CSS with `scroll-margin-top` and `:target` highlighting.
+- Reduced top navigation/header footprint to keep more principle content visible after in-page jumps.
+- Updated licensing notes to explicitly state that the QB Networks logo is Public Domain, sourced from Openclipart:
+	https://openclipart.org/detail/62191/semantic-social-network

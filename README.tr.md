@@ -99,3 +99,13 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 - Hukuki inceleme olmadan LICENSE dosyasını değiştirmeyin
 - UI güncellemelerinden sonra responsive davranışı tekrar test edin
 - Bölüm kimlikleri veya sınıf adları değişirse JS davranışını yeniden kontrol edin
+
+## Son Güncellemeler (2026-07-19)
+
+- Ethics sayfasında çift yönlü referans yapısı eklendi: alıntı işaretleri `[1]..[10]` ilgili referansa gider, referans bağlantıları da ilgili ilke kartına geri döner.
+- Ethics referans metinleri, profil README yapısı ve "Back to reference N" tarzına uyumlu olacak şekilde güncellendi.
+- Bağlantı dönüş hedefleri yalnızca alıntı satırına değil, tam ilke kartına yönlendirildi (başlık + paragraf + alıntı).
+- Sayfa içi gezinme görünürlüğü için CSS tarafında `scroll-margin-top` ve `:target` vurgusu eklendi.
+- İlkelere dönüşte daha fazla içerik görünmesi için üst gezinme çubuğunun boyutu küçültüldü.
+- Lisans notları güncellenerek QB Networks logosunun Public Domain olduğu ve kaynağının Openclipart olduğu açıkça belirtildi:
+	https://openclipart.org/detail/62191/semantic-social-network
